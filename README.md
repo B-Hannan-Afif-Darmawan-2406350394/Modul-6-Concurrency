@@ -35,3 +35,10 @@ Pada milestone 3, untuk memisahkan route, kita bisa membuat if condition pada `s
 Pada milestone 4, browser pada url normal menunggu url dengan /sleep selesai diload. Ini terjadi karena servernya berjalan di single thread. Jadi harus menunggu /sleep nya selesai baru bisa. Singkatnya:
 - ke url dengan /sleep, maka akan sleep selama 10 detik.
 - ketika ke url normal, namun masih sleep. Maka harus menunggu sampai selesai baru bisa load.
+
+# Commit 5 Reflection Notes
+
+Pada milestone 5, kita menggunakan ThreadPool. Hal ini mengubah server dari sequential jadi asinkron. Di dalam kode:
+- Kita buat 4 thread yang siap dipakai dan dalam kondisi idle
+- Ketika ada request masuk dari browser, request masuk ke antrian (task queue)
+- Thread yang idle akan ngambil tugasnya, jika salah satu mengambil /sleep, maka jika kita buka url normal. Tidak akan terganggu karena ada thread lain yang akan mengambilnya.
