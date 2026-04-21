@@ -1,6 +1,6 @@
 # Commit 1 Reflection Notes
 
-Fungsi `handle_connection` bertugas untuk memproses koneksi TCP yang masuk dengan cara:
+Pada milestone 1, Fungsi `handle_connection` bertugas untuk memproses koneksi TCP yang masuk dengan cara:
 - Menerima `TcpStream` sebagai input.
 - Menggunakan `bufReader` untuk meningkatkan efisiensi dari pembacaan data dari stream.
 - Membagi dan membaca data baris per baris dan berhenti jika menemukan baris kosong (dalam HTTP berarti akhir dari header).
@@ -29,3 +29,9 @@ Pada milestone 3, untuk memisahkan route, kita bisa membuat if condition pada `s
 
 *Screenshot terminal*  
 ![Commit 3 screen capture](image-2.png)
+
+# Commit 4 Reflection Notes
+
+Pada milestone 4, browser pada url normal menunggu url dengan /sleep selesai diload. Ini terjadi karena servernya berjalan di single thread. Jadi harus menunggu /sleep nya selesai baru bisa. Singkatnya:
+- ke url dengan /sleep, maka akan sleep selama 10 detik.
+- ketika ke url normal, namun masih sleep. Maka harus menunggu sampai selesai baru bisa load.
